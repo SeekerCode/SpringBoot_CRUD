@@ -1,0 +1,5 @@
+com\example\mapper\demoMapper.class
+com\example\demo\Demo0519Application.class
+com\example\model\userinfo.class
+com\example\controller\demoController.class
+com\example\service\demoService.class

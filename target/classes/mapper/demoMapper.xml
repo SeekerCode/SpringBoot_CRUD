@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.example.mapper.demoMapper">
+	<select id="getAllusers" resultType="com.example.model.userinfo">
+		select *
+			from userinfo
+		where 1=1
+	</select>
+	<select id="getCount" resultType="int">
+		select count(*)
+			from userinfo
+		where 1=1
+	</select>
+	
+	<select id="getUserinfo" resultType="com.example.model.userinfo">
+		select *
+			from userinfo
+		where usercode=#{usercode}
+	</select>
+	
+	<delete id="deleteuser">
+		DELETE 
+			from userinfo
+		where usercode = #{usercode}
+	</delete>
+	
+	<update id="updateuser">
+	update userinfo
+		set 
+		username = #{userinfo.username},
+		age = #{userinfo.age},
+		sex = #{userinfo.sex},
+		major = #{userinfo.major}
+	where usercode = #{usercode}
+	</update>
+	
+	<insert id="insertuser">
+	
+		insert 
+			into userinfo
+			( `usercode`, `username`, `age`, `sex`, `major`)
+		values(	#{userinfo.usercode},	#{userinfo.username},
+				#{userinfo.age},		#{userinfo.sex},	#{userinfo.major})
+	</insert>
+	
+	
+	
+</mapper>
